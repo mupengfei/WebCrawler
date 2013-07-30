@@ -157,7 +157,7 @@
 									<li class="current_page_item"><a href="TaoBao.jsp">淘    宝    网</a></li>
 									<li>
 									<section class="is-search">
-									<form method="post" action="#">
+									<form method="post" action="SearchServlet">
 										<input type="text" class="text" name="search" placeholder="请输入爬虫目标URL" />
 									</form>
 									</section>

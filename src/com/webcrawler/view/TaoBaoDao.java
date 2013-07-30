@@ -22,6 +22,18 @@ public class TaoBaoDao {
 		return goodList;
 	}
 
+	public TBgoods getGoodsById(String gId) {
+		String sql = "select * from tb_goods where id  = ?";
+		List<Map> res = DBHelper.executeQuery(sql,
+				new Object[] {gId});
+		List<TBgoods> goodList = new ArrayList<TBgoods>();
+		for (Map map : res) {
+			TBgoods good = new TBgoods(map);
+			goodList.add(good);
+		}
+		return goodList.get(0);
+	}
+	
 	public List<TBreply> getAllReplys(String goodsId) {
 		List<Map> res = DBHelper.executeQuery(TaoBaoContext.ALL_Replys,
 				new Object[] { goodsId });
